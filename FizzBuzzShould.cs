@@ -57,13 +57,29 @@ namespace FizzBuzz
             Assert.AreEqual(output, "Fizz");
         }
 
+        [Test]
+        public static void PrintFizzForNine()
+        {
+            var output = FizzBuzzGenerate(9);
+
+            Assert.AreEqual("Fizz", output);
+        }
+
+        [Test]
+        public static void PrintBuzzForTen()
+        {
+            var output = FizzBuzzGenerate(10);
+
+            Assert.AreEqual("Buzz", output);
+        }
+
         private static object FizzBuzzGenerate(int input)
         {
-            if (input == 3 || input == 6)
+            if (input % 3 == 0)
             {
                 return "Fizz";
             }
-            else if (input == 5)
+            else if (input == 5 || input == 10)
             {
                 return "Buzz";
             }
