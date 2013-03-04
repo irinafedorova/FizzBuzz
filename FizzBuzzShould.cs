@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FizzBuzz
 {
-    public class FizzBuzzShould
+    public class FizzBuzzGeneratorShould
     {
         private const int FizzDevider = 3;
         private const int BuzzDevider = 5;
@@ -29,7 +29,7 @@ namespace FizzBuzz
         private const string Four = "4";
 
         [Test]
-        public static void PrintOneForOne()
+        public static void OutputOneForOne()
         {
             var input = 1;
             var output = FizzBuzzGenerate(input);
@@ -38,7 +38,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void PrintTwoForTwo()
+        public static void OutputTwoForTwo()
         {
             var input = 2;
             var output = FizzBuzzGenerate(input);
@@ -47,7 +47,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void PrintFizzForThree()
+        public static void OutputFizzForThree()
         {
             var input = 3;
             var output = FizzBuzzGenerate(input);
@@ -56,7 +56,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void PrintFourForFour()
+        public static void OutputFourForFour()
         {
             var input = 4;
             var output = FizzBuzzGenerate(input);
@@ -65,7 +65,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void PrintBuzzForFive()
+        public static void OutputBuzzForFive()
         {
             var input = 5;
             var output = FizzBuzzGenerate(input);
@@ -74,7 +74,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void PrintFizzForSix()
+        public static void OutputFizzForSix()
         {
             var input = 6;
             var output = FizzBuzzGenerate(input);
@@ -83,7 +83,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void PrintWoofForSeven()
+        public static void OutputWoofForSeven()
         {
             var input = 7;
             var output = FizzBuzzGenerate(input);
@@ -92,7 +92,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void PrintFizzForNine()
+        public static void OutputFizzForNine()
         {
             var input = 9;
             var output = FizzBuzzGenerate(input);
@@ -101,7 +101,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void PrintBuzzForTen()
+        public static void OutputBuzzForTen()
         {
             var input = 10;
             var output = FizzBuzzGenerate(input);
@@ -110,7 +110,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void PrintWoofForForteen()
+        public static void OutputWoofForForteen()
         {
             var input = 14;
             var output = FizzBuzzGenerate(input);
@@ -119,7 +119,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void PrintFizzWoofForTwentyOne()
+        public static void OutputFizzWoofForTwentyOne()
         {
             var input = 21;
             var output = FizzBuzzGenerate(input);
@@ -128,7 +128,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void PrintFizzBuzzForFifteen()
+        public static void OutputFizzBuzzForFifteen()
         {
             var input = 15;
             var output = FizzBuzzGenerate(input);
@@ -137,7 +137,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void PrintFizzBuzzForThirty()
+        public static void OutputFizzBuzzForThirty()
         {
             var input = 30;
             var output = FizzBuzzGenerate(input);
@@ -146,7 +146,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void PrintFizzWoofForFourtyTwo()
+        public static void OutputFizzWoofForFourtyTwo()
         {
             var input = 42;
             var output = FizzBuzzGenerate(input);
@@ -155,7 +155,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void PrintBuzzWoofForThirtyFive()
+        public static void OutputBuzzWoofForThirtyFive()
         {
             var input = 35;
             var output = FizzBuzzGenerate(input);
@@ -164,7 +164,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void PrintFizzBuzzWoofForHundredAndFive()
+        public static void OutputFizzBuzzWoofForHundredAndFive()
         {
             var input = 105;
             var output = FizzBuzzGenerate(input);
@@ -173,7 +173,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void PrintUpToFifteen()
+        public static void OutputUpToFifteen()
         {
             var sb = new StringBuilder();
 
@@ -194,7 +194,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void HasFuzzInOutput()
+        public static void HasFizzInOutput()
         {
             var sb = new StringBuilder();
 
@@ -286,7 +286,7 @@ namespace FizzBuzz
 
             for (int i = 1; i <= maxValue; i++)
             {
-                string output = FizzBuzzGenerate(i * FizzDevider*BuzzDevider * WoofDevider);
+                string output = FizzBuzzGenerate(i * FizzDevider * BuzzDevider * WoofDevider);
                 Assert.IsTrue(output.Contains(Fizz) && output.Contains(Buzz) && output.Contains(Woof));
             }
         }
