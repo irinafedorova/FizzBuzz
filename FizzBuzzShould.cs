@@ -20,6 +20,7 @@ namespace FizzBuzz
         private const string FizzBuzz = "FizzBuzz";
         private const string FizzWoof = "FizzWoof";
         private const string BuzzWoof = "BuzzWoof";
+        private const string FizzBuzzWoof = "FizzBuzzWoof";
 
         private const string Comma = ", ";
 
@@ -163,6 +164,15 @@ namespace FizzBuzz
         }
 
         [Test]
+        public static void PrintFizzBuzzWoofForHundredAndFive()
+        {
+            var input = 105;
+            var output = FizzBuzzGenerate(input);
+
+            Assert.AreEqual(FizzBuzzWoof, output);
+        }
+
+        [Test]
         public static void PrintUpToFifteen()
         {
             var sb = new StringBuilder();
@@ -188,6 +198,11 @@ namespace FizzBuzz
             var isDivisibleByThree = input % FizzDevider == 0;
             var isDivisibleByFive = input % BuzzDevider == 0;
             var isDivisibleBySeven = input % WoofDevider == 0;
+
+            if (isDivisibleBySeven && isDivisibleByThree && isDivisibleByFive)
+            {
+                return FizzBuzzWoof;
+            }
 
             if (isDivisibleBySeven && isDivisibleByFive)
             {
