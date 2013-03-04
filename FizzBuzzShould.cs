@@ -21,7 +21,6 @@ namespace FizzBuzz
         public static void PrintOneForOne()
         {
             var input = 1;
-
             var output = FizzBuzzGenerate(input);
 
             Assert.AreEqual(output, One);
@@ -31,7 +30,6 @@ namespace FizzBuzz
         public static void PrintTwoForTwo()
         {
             var input = 2;
-
             var output = FizzBuzzGenerate(input);
 
             Assert.AreEqual(output, Two);
@@ -40,7 +38,8 @@ namespace FizzBuzz
         [Test]
         public static void PrintFizzForThree()
         {
-            var output = FizzBuzzGenerate(3);
+            var input = 3;
+            var output = FizzBuzzGenerate(input);
 
             Assert.AreEqual(output, Fizz);
         }
@@ -48,7 +47,8 @@ namespace FizzBuzz
         [Test]
         public static void PrintFourForFour()
         {
-            var output = FizzBuzzGenerate(4);
+            var input = 4;
+            var output = FizzBuzzGenerate(input);
 
             Assert.AreEqual(output, Four);
         }
@@ -56,7 +56,8 @@ namespace FizzBuzz
         [Test]
         public static void PrintBuzzForFive()
         {
-            var output = FizzBuzzGenerate(5);
+            var input = 5;
+            var output = FizzBuzzGenerate(input);
 
             Assert.AreEqual(output, Buzz);
         }
@@ -64,7 +65,8 @@ namespace FizzBuzz
         [Test]
         public static void PrintFizzForSix()
         {
-            var output = FizzBuzzGenerate(6);
+            var input = 6;
+            var output = FizzBuzzGenerate(input);
 
             Assert.AreEqual(output, Fizz);
         }
@@ -72,7 +74,8 @@ namespace FizzBuzz
         [Test]
         public static void PrintFizzForNine()
         {
-            var output = FizzBuzzGenerate(9);
+            var input = 9;
+            var output = FizzBuzzGenerate(input);
 
             Assert.AreEqual(Fizz, output);
         }
@@ -80,7 +83,8 @@ namespace FizzBuzz
         [Test]
         public static void PrintBuzzForTen()
         {
-            var output = FizzBuzzGenerate(10);
+            var input = 10;
+            var output = FizzBuzzGenerate(input);
 
             Assert.AreEqual(Buzz, output);
         }
@@ -88,7 +92,8 @@ namespace FizzBuzz
         [Test]
         public static void PrintFizzBuzzForFifteen()
         {
-            var output = FizzBuzzGenerate(15);
+            var input = 15;
+            var output = FizzBuzzGenerate(input);
 
             Assert.AreEqual(FizzBuzz, output);
         }
@@ -96,7 +101,8 @@ namespace FizzBuzz
         [Test]
         public static void PrintFizzBuzzForThirty()
         {
-            var output = FizzBuzzGenerate(30);
+            var input = 30;
+            var output = FizzBuzzGenerate(input);
 
             Assert.AreEqual(FizzBuzz, output);
         }
