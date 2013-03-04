@@ -11,6 +11,7 @@ namespace FizzBuzz
     {
         private const int FizzDevider = 3;
         private const int BuzzDevider = 5;
+        private const int WoofDevider = 7;
 
         private const string Fizz = "Fizz";
         private const string Buzz = "Buzz";
@@ -167,15 +168,18 @@ namespace FizzBuzz
         {
             var isDivisibleByThree = input % FizzDevider == 0;
             var isDivisibleByFive = input % BuzzDevider == 0;
+            var isDivisibleBySeven = input % WoofDevider == 0;
 
-            if (input == 7 || input == 14)
-            {
-                return Woof;
-            }
+
 
             if (input == 21)
             {
                 return FizzWoof;
+            }
+
+            if (isDivisibleBySeven)
+            {
+                return Woof;
             }
 
             if (isDivisibleByThree && isDivisibleByFive)
