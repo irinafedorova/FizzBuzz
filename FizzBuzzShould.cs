@@ -15,11 +15,14 @@ namespace FizzBuzz
         private const string One = "1";
         private const string Two = "2";
         private const string Four = "4";
+        private const string Comma = ", ";
 
         [Test]
         public static void PrintOneForOne()
         {
-            var output = FizzBuzzGenerate(1);
+            var input = 1;
+
+            var output = FizzBuzzGenerate(input);
 
             Assert.AreEqual(output, One);
         }
@@ -27,7 +30,9 @@ namespace FizzBuzz
         [Test]
         public static void PrintTwoForTwo()
         {
-            var output = FizzBuzzGenerate(2);
+            var input = 2;
+
+            var output = FizzBuzzGenerate(input);
 
             Assert.AreEqual(output, Two);
         }
@@ -97,19 +102,24 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void PrintUpToHundret()
+        public static void PrintUpToFifteen()
         {
             var sb = new StringBuilder();
 
-            for (int i = 0; i < 15; i++)
+            var maxValue = 15;
+
+            for (int i = 1; i <= maxValue; i++)
             {
                 sb.Append(FizzBuzzGenerate(i));
-                sb.Append(',');
+                if (i < maxValue)
+                {
+                    sb.Append(Comma);
+                }
             }
 
             var result = sb.ToString();
 
-            Assert.AreEqual("FizzBuzz,1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz", result);
+            Assert.AreEqual("1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz", result);
         }
 
         private static object FizzBuzzGenerate(int input)
