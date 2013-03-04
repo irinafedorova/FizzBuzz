@@ -194,7 +194,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void HasFuzzInOutpuut()
+        public static void HasFuzzInOutput()
         {
             var sb = new StringBuilder();
 
@@ -208,7 +208,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void HasBuzzInOutpuut()
+        public static void HasBuzzInOutput()
         {
             var sb = new StringBuilder();
 
@@ -222,7 +222,7 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void HasWoofInOutpuut()
+        public static void HasWoofInOutput()
         {
             var sb = new StringBuilder();
 
@@ -232,6 +232,62 @@ namespace FizzBuzz
             {
                 string output = FizzBuzzGenerate(i * WoofDevider);
                 Assert.IsTrue(output.Contains(Woof));
+            }
+        }
+
+        [Test]
+        public static void HasFizzBuzzInOutput()
+        {
+            var sb = new StringBuilder();
+
+            var maxValue = 10000;
+
+            for (int i = 1; i <= maxValue; i++)
+            {
+                string output = FizzBuzzGenerate(i * FizzDevider * BuzzDevider);
+                Assert.IsTrue(output.Contains(Fizz) && output.Contains(Buzz));
+            }
+        }
+
+        [Test]
+        public static void HasFizzWoofInOutput()
+        {
+            var sb = new StringBuilder();
+
+            var maxValue = 10000;
+
+            for (int i = 1; i <= maxValue; i++)
+            {
+                string output = FizzBuzzGenerate(i * FizzDevider * WoofDevider);
+                Assert.IsTrue(output.Contains(Fizz) && output.Contains(Woof));
+            }
+        }
+
+        [Test]
+        public static void HasBuzzWoofInOutput()
+        {
+            var sb = new StringBuilder();
+
+            var maxValue = 10000;
+
+            for (int i = 1; i <= maxValue; i++)
+            {
+                string output = FizzBuzzGenerate(i * BuzzDevider * WoofDevider);
+                Assert.IsTrue(output.Contains(Buzz) && output.Contains(Woof));
+            }
+        }
+
+        [Test]
+        public static void HasFizzBuzzWoofInOutput()
+        {
+            var sb = new StringBuilder();
+
+            var maxValue = 10000;
+
+            for (int i = 1; i <= maxValue; i++)
+            {
+                string output = FizzBuzzGenerate(i * FizzDevider*BuzzDevider * WoofDevider);
+                Assert.IsTrue(output.Contains(Fizz) && output.Contains(Buzz) && output.Contains(Woof));
             }
         }
 
