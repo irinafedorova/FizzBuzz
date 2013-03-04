@@ -96,24 +96,43 @@ namespace FizzBuzz
             Assert.AreEqual(FizzBuzz, output);
         }
 
+        [Test]
+        public static void PrintUpToHundret()
+        {
+            var sb = new StringBuilder();
+
+            for (int i = 0; i < 15; i++)
+            {
+                sb.Append(FizzBuzzGenerate(i));
+                sb.Append(',');
+            }
+
+            var result = sb.ToString();
+
+            Assert.AreEqual("FizzBuzz,1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz", result);
+        }
+
         private static object FizzBuzzGenerate(int input)
         {
-            if (input == 15 || input == 30)
+            var isDivisibleByThree = input % 3 == 0;
+            var isDivisibleByFive = input % 5 == 0;
+
+            if (isDivisibleByThree && isDivisibleByFive)
             {
                 return FizzBuzz;
             }
-            else if (input % 3 == 0)
+
+            if (isDivisibleByThree)
             {
                 return Fizz;
             }
-            else if (input % 5 == 0)
+
+            if (isDivisibleByFive)
             {
                 return Buzz;
             }
-            else
-            {
-                return input.ToString();
-            }
+
+            return input.ToString();
         }
     }
 }
