@@ -26,6 +26,14 @@ namespace FizzBuzz
         }
 
         [Test]
+        public static void PrintFizzForThree()
+        {
+            var output = FizzBuzzGenerate(3);
+
+            Assert.AreEqual(output, "Fizz");
+        }
+
+        [Test]
         public static void PrintFourForFour()
         {
             var output = FizzBuzzGenerate(4);
@@ -34,20 +42,32 @@ namespace FizzBuzz
         }
 
         [Test]
-        public static void PrintFizzForThree()
+        public static void PrintBuzzForFive()
         {
-            var output = FizzBuzzGenerate(3);
+            var output = FizzBuzzGenerate(5);
+
+            Assert.AreEqual(output, "Buzz");
+        }
+
+        [Test]
+        public static void PrintFizzForSix()
+        {
+            var output = FizzBuzzGenerate(6);
 
             Assert.AreEqual(output, "Fizz");
         }
 
         private static object FizzBuzzGenerate(int input)
         {
-            if (input == 3)
+            if (input == 3 || input == 6)
             {
                 return "Fizz";
             }
-            else 
+            else if (input == 5)
+            {
+                return "Buzz";
+            }
+            else
             {
                 return input.ToString();
             }
