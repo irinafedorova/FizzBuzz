@@ -193,7 +193,49 @@ namespace FizzBuzz
             Assert.AreEqual("1, 2, Fizz, 4, Buzz, Fizz, Woof, 8, Fizz, Buzz, 11, Fizz, 13, Woof, FizzBuzz", result);
         }
 
-        private static object FizzBuzzGenerate(int input)
+        [Test]
+        public static void HasFuzzInOutpuut()
+        {
+            var sb = new StringBuilder();
+
+            var maxValue = 10000;
+
+            for (int i = 1; i <= maxValue; i++)
+            {
+                string output = FizzBuzzGenerate(i * FizzDevider);
+                Assert.IsTrue(output.Contains(Fizz));
+            }
+        }
+
+        [Test]
+        public static void HasBuzzInOutpuut()
+        {
+            var sb = new StringBuilder();
+
+            var maxValue = 10000;
+
+            for (int i = 1; i <= maxValue; i++)
+            {
+                string output = FizzBuzzGenerate(i * BuzzDevider);
+                Assert.IsTrue(output.Contains(Buzz));
+            }
+        }
+
+        [Test]
+        public static void HasWoofInOutpuut()
+        {
+            var sb = new StringBuilder();
+
+            var maxValue = 10000;
+
+            for (int i = 1; i <= maxValue; i++)
+            {
+                string output = FizzBuzzGenerate(i * WoofDevider);
+                Assert.IsTrue(output.Contains(Woof));
+            }
+        }
+
+        private static string FizzBuzzGenerate(int input)
         {
             var isDivisibleByThree = input % FizzDevider == 0;
             var isDivisibleByFive = input % BuzzDevider == 0;
